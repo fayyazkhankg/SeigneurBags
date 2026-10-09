@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEIGNEURBAGS — Luxury Fashion, Designer Handbags & Haute Horlogerie</title>
+  <meta name="description" content="Ultra-luxury boutique selling authentic designer handbags, luxury footwear, fine watches, and statement accessories. Direct dispatch from our Dubai vault.">
+  <meta name="theme-color" content="#121212">
+
+  <!-- Google Fonts: Playfair Display, Plus Jakarta Sans, Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========================================================
+       1. TOP ANNOUNCEMENT BAR
+       ======================================================== -->
+  <aside class="announcement-bar" role="region" aria-label="Announcement">
+    <div class="container">
+      <div class="marquee-track">
+        <div class="announcement-item">
+          <span>✈️ Free Worldwide Insured Shipping</span>
+        </div>
+        <div class="gold-dot"></div>
+        <div class="announcement-item">
+          <span>💳 Secure Payments &amp; Easy Returns</span>
+        </div>
+        <div class="gold-dot"></div>
+        <div class="announcement-item">
+          <span>🇦🇪 Direct Dispatch from Dubai Luxury Vault</span>
+        </div>
+        <div class="gold-dot"></div>
+        <div class="announcement-item">
+          <span>🔒 100% Authenticity Guaranteed with Verified Provenance</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================
+       2. STICKY HEADER & NAVIGATION
+       ======================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="header-inner">
+        
+        <!-- Left: Hamburger, Currency Selector, Search Trigger -->
+        <div class="header-left">
+          <button class="mobile-menu-btn" aria-label="Open Mobile Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+
+          <!-- Currency Selector -->
+          <div class="currency-selector-wrapper">
+            <label for="currency-select" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0);">Currency</label>
+            <select id="currency-select" class="currency-select" aria-label="Select Currency">
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="AED">AED (AED)</option>
+            </select>
+            <span class="currency-arrow">▼</span>
+          </div>
+
+          <!-- Search Trigger Button -->
+          <button class="search-trigger-btn" aria-label="Search Catalog">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span style="display: none; @media(min-width: 768px){display: inline;}">Search</span>
+          </button>
+        </div>
+
+        <!-- Center: Centered Logo / Monogram "SEIGNEURBAGS" -->
+        <div class="header-center">
+          <a href="#" class="brand-logo">
+            <span class="brand-monogram">SB</span>
+            <span class="brand-name">SEIGNEURBAGS</span>
+            <span class="brand-subtext">DUBAI &bull; PARIS &bull; GENÈVE</span>
+          </a>
+        </div>
+
+        <!-- Right: Concierge Pill, Wishlist, Bag Drawer Trigger -->
+        <div class="header-right">
+          <a href="#concierge" class="header-concierge-pill trigger-concierge-modal">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            <span>Concierge</span>
+          </a>
+
+          <!-- Wishlist Indicator -->
+          <button class="header-action-btn" aria-label="View Wishlist" onclick="showToast('Your saved wishlist contains 1 exclusive piece.')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span class="bag-counter-badge" id="wishlist-count-badge" style="display: none; background: #616161; color: #fff;">1</span>
+          </button>
+
+          <!-- Shopping Bag Counter & Trigger -->
+          <button class="header-action-btn" id="cart-trigger-btn" aria-label="Shopping Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="bag-counter-badge" id="bag-count-badge">1</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Navigation Links (Desktop) -->
+      <nav class="nav-bar" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#handbags" class="nav-link" onclick="document.querySelector('[data-filter=handbags]')?.click()">Handbags</a></li>
+          <li><a href="#footwear" class="nav-link" onclick="document.querySelector('[data-filter=footwear]')?.click()">Footwear</a></li>
+          <li><a href="#watches" class="nav-link" onclick="document.querySelector('[data-filter=watches]')?.click()">Watches</a></li>
+          <li><a href="#accessories" class="nav-link" onclick="document.querySelector('[data-filter=accessories]')?.click()">Accessories</a></li>
+          <li><a href="#lookbook" class="nav-link">Lookbook</a></li>
+          <li><a href="#concierge" class="nav-link featured-tag">Contact &bull; Concierge</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <button class="mobile-nav-close" aria-label="Close Mobile Menu">&times;</button>
+    <div style="margin-bottom: 2rem;">
+      <span style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-light); letter-spacing: 0.2em;">SEIGNEURBAGS</span>
+      <div style="font-size: 0.7rem; color: var(--text-secondary); letter-spacing: 0.25em;">DUBAI PRIVATE ATELIER</div>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#handbags" onclick="document.querySelector('[data-filter=handbags]')?.click()">Handbags &amp; Totes</a></li>
+      <li><a href="#footwear" onclick="document.querySelector('[data-filter=footwear]')?.click()">Luxury Footwear</a></li>
+      <li><a href="#watches" onclick="document.querySelector('[data-filter=watches]')?.click()">Haute Horlogerie</a></li>
+      <li><a href="#accessories" onclick="document.querySelector('[data-filter=accessories]')?.click()">Fine Accessories</a></li>
+      <li><a href="#lookbook">Lookbook 2026</a></li>
+      <li><a href="#concierge">VIP WhatsApp Concierge</a></li>
+    </ul>
+    <div style="padding-top: 2rem; border-top: 1px solid var(--border-light); font-size: 0.85rem; color: var(--text-secondary);">
+      <p style="margin-bottom: 0.5rem; color: var(--gold-primary);">Private Dubai Vault Desk:</p>
+      <p>+971 50 123 4567</p>
+      <p>concierge@seigneurbags.com</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================
+         2. HERO SECTION (DARK, MOODY LUXURY EDITORIAL)
+         ======================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-background-media">
+        <img class="hero-bg-img" 
+             src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=2000&q=85" 
+             alt="Luxury Designer Handbags and Accessories Editorial" 
+             priority>
+        <div class="hero-overlay-gradient"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>Autumn / Winter 2026 Private Drop</span>
+        </div>
+
+        <h1 class="hero-title">Curated Luxury, <br><span class="gold-gradient-text">Global Elegance.</span></h1>
+        
+        <p class="hero-subtitle">
+          Discover an exclusive collection of designer handbags, statement timepieces, and runway accessories sourced directly for the world’s most discerning collectors.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#collection" class="btn btn-primary">
+            <span>Explore The Collection</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <a href="https://wa.me/971501234567?text=Hello%20SeigneurBags%2C%20I%20would%20like%20to%20inquire%20about%20your%20curated%20luxury%20collection." 
+             target="_blank" 
+             rel="noopener" 
+             class="btn btn-whatsapp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            <span>Order via WhatsApp / DM</span>
+          </a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="hero-metric-item">
+            <div class="hero-metric-value">100%</div>
+            <div class="hero-metric-label">Verified Authenticity</div>
+          </div>
+          <div class="hero-metric-item">
+            <div class="hero-metric-value">DIFC Vault</div>
+            <div class="hero-metric-label">Dubai Inspected &amp; Dispatched</div>
+          </div>
+          <div class="hero-metric-item">
+            <div class="hero-metric-value">Worldwide</div>
+            <div class="hero-metric-label">Armed Courier Upon Request</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3. FEATURED CATEGORIES (4-COLUMN VISUAL GALLERY)
+         ======================================================== -->
+    <section class="categories-section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Haute Curations</span>
+          <h2 class="section-title">Featured Categories</h2>
+          <p class="section-subtitle">Exquisite design houses curated by our international fashion directors.</p>
+        </div>
+
+        <div class="categories-grid">
+          
+          <!-- Category 1: Handbags & Totes -->
+          <article class="category-card" onclick="document.querySelector('[data-filter=handbags]')?.click(); location.href='#collection';">
+            <div class="category-media">
+              <img class="category-img" 
+                   src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80" 
+                   alt="Designer Handbags & Totes">
+              <div class="category-overlay"></div>
+            </div>
+            <div class="category-details">
+              <span class="category-tag">Atelier Leather</span>
+              <h3 class="category-name">Designer Handbags &amp; Totes</h3>
+              <div class="category-count">
+                <span>Birkin &bull; Kelly &bull; Flap Bags</span>
+                <span class="category-arrow-icon">&rarr;</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Category 2: Luxury Footwear -->
+          <article class="category-card" onclick="document.querySelector('[data-filter=footwear]')?.click(); location.href='#collection';">
+            <div class="category-media">
+              <img class="category-img" 
+                   src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=80" 
+                   alt="Luxury Footwear">
+              <div class="category-overlay"></div>
+            </div>
+            <div class="category-details">
+              <span class="category-tag">Runway Footwear</span>
+              <h3 class="category-name">Luxury Footwear</h3>
+              <div class="category-count">
+                <span>Louboutin &bull; Loro Piana &bull; Heels</span>
+                <span class="category-arrow-icon">&rarr;</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Category 3: Timepieces & Watches -->
+          <article class="category-card" onclick="document.querySelector('[data-filter=watches]')?.click(); location.href='#collection';">
+            <div class="category-media">
+              <img class="category-img" 
+                   src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80" 
+                   alt="Timepieces & Watches">
+              <div class="category-overlay"></div>
+            </div>
+            <div class="category-details">
+              <span class="category-tag">Haute Horlogerie</span>
+              <h3 class="category-name">Timepieces &amp; Watches</h3>
+              <div class="category-count">
+                <span>Patek &bull; Audemars &bull; Rolex</span>
+                <span class="category-arrow-icon">&rarr;</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Category 4: Fine Accessories & Belts -->
+          <article class="category-card" onclick="document.querySelector('[data-filter=accessories]')?.click(); location.href='#collection';">
+            <div class="category-media">
+              <img class="category-img" 
+                   src="https://images.unsplash.com/photo-1611591475155-42647548d011?auto=format&fit=crop&w=900&q=80" 
+                   alt="Fine Accessories & Belts">
+              <div class="category-overlay"></div>
+            </div>
+            <div class="category-details">
+              <span class="category-tag">Fine Jewelry &amp; Accents</span>
+              <h3 class="category-name">Fine Accessories &amp; Belts</h3>
+              <div class="category-count">
+                <span>Cartier &bull; Van Cleef &bull; Belts</span>
+                <span class="category-arrow-icon">&rarr;</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. BEST SELLERS & NEW ARRIVALS (INTERACTIVE PRODUCT CAROUSEL/GRID)
+         ======================================================== -->
+    <section class="products-section" id="collection">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Private Vault Selection</span>
+          <h2 class="section-title">Best Sellers &amp; New Arrivals</h2>
+          <p class="section-subtitle">Store-fresh condition, authenticated by master gemologists and horologists in Dubai.</p>
+        </div>
+
+        <!-- Filter navigation pills -->
+        <div class="filter-nav">
+          <button class="filter-btn active" data-filter="all">All Curations</button>
+          <button class="filter-btn" data-filter="handbags">Designer Handbags</button>
+          <button class="filter-btn" data-filter="watches">Haute Horlogerie</button>
+          <button class="filter-btn" data-filter="footwear">Luxury Footwear</button>
+          <button class="filter-btn" data-filter="accessories">Fine Accessories</button>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="products-grid" id="products-grid">
+          <!-- Populated by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. TRUST BADGES & GUARANTEES (4 ICONS WITH SHORT TEXT)
+         ======================================================== -->
+    <section class="trust-section" id="guarantees">
+      <div class="container">
+        <div class="trust-grid">
+          
+          <div class="trust-card">
+            <div class="trust-icon-box">
+              <span>✈️</span>
+            </div>
+            <h3 class="trust-title">Worldwide Delivery</h3>
+            <p class="trust-text">Free insured international courier shipping via DHL Express &amp; FedEx Priority with armed escort options.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon-box">
+              <span>🔒</span>
+            </div>
+            <h3 class="trust-title">100% Secure Checkout</h3>
+            <p class="trust-text">Verified 256-bit encrypted transactions via PayPal, Visa, Mastercard, Apple Pay &amp; private wire.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon-box">
+              <span>🔄</span>
+            </div>
+            <h3 class="trust-title">Hassle-Free Returns</h3>
+            <p class="trust-text">7-day easy exchange and refund policy with complimentary international courier pickup service.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon-box">
+              <span>🇦🇪</span>
+            </div>
+            <h3 class="trust-title">Dubai Based</h3>
+            <p class="trust-text">Direct dispatch from our DIFC luxury vault &amp; dedicated 24/7 personal concierge assistance.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. VIP CONCIERGE / WHATSAPP DIRECT ORDER SECTION
+         ======================================================== -->
+    <section class="concierge-section" id="concierge">
+      <div class="container">
+        <div class="concierge-banner">
+          
+          <div class="concierge-text-content">
+            <div class="concierge-tag">
+              <span>⚜️</span>
+              <span>Private Dubai Styling Salon</span>
+            </div>
+            <h2 class="concierge-headline">Looking for a rare piece? Chat directly with our private Dubai shopping concierge.</h2>
+            <p class="concierge-desc">
+              Whether you are hunting for an allocated Hermès Birkin Faubourg, a vintage Patek Philippe Grand Complication, or limited-run runway pieces, our international sourcing team fulfills rare requests within 48 hours.
+            </p>
+
+            <div class="concierge-points">
+              <div class="concierge-point-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Direct 1-on-1 private styling via encrypted WhatsApp chat</span>
+              </div>
+              <div class="concierge-point-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>High-resolution 4K live video inspection from our Dubai vault</span>
+              </div>
+              <div class="concierge-point-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>White-glove hotel or penthouse delivery across Dubai, London &amp; Paris</span>
+              </div>
+            </div>
+
+            <div class="concierge-buttons">
+              <a href="https://wa.me/971501234567?text=Hello%20SeigneurBags%20Concierge%2C%20I%20am%20looking%20for%20a%20rare%20piece%20and%20would%20like%20private%20assistance." 
+                 target="_blank" 
+                 rel="noopener" 
+                 class="btn btn-whatsapp" 
+                 style="font-size: 0.9rem; padding: 1.1rem 2.2rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                </svg>
+                <span>Chat on WhatsApp Now</span>
+              </a>
+
+              <button class="btn btn-secondary trigger-concierge-modal">
+                <span>Request Custom Sourcing</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Concierge Visual Card -->
+          <div class="concierge-visual-card">
+            <div class="concierge-status-pill">
+              <span class="live-green-dot"></span>
+              <span>Atelier Concierge Online</span>
+            </div>
+            <div class="concierge-avatar-stack">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Concierge Lead" class="concierge-avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Horology Specialist" class="concierge-avatar">
+            </div>
+            <h3 class="concierge-card-title">Dubai Private Desk</h3>
+            <p class="concierge-card-role">Haute Maroquinerie &bull; Horlogerie</p>
+            <div class="concierge-contact-direct">
+              <span>Direct Hotline:</span>
+              <strong style="color: var(--gold-light);">+971 50 123 4567</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. CLIENT REVIEWS / SOCIAL PROOF (3 COLUMNS)
+         ======================================================== -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Discerning Clientele</span>
+          <h2 class="section-title">Client Reviews &amp; Unboxing Stories</h2>
+          <p class="section-subtitle">Real experiences from our global private collectors across Dubai, London, New York &amp; Paris.</p>
+        </div>
+
+        <div class="reviews-grid">
+          
+          <!-- Review 1 -->
+          <article class="review-card">
+            <div class="review-stars">
+              ★★★★★
+            </div>
+            <p class="review-quote">
+              "Acquiring my Birkin 25 in Noir Togo through SeigneurBags was flawless. The bag arrived sealed with full boutique packaging, original invoice, and microchip verification within 48 hours to London."
+            </p>
+            <div class="review-unboxing-tag">
+              <span>📦</span>
+              <span>Unboxing: Hermès Birkin 25 Togo</span>
+            </div>
+            <div class="review-buyer-meta">
+              <div>
+                <div class="review-buyer-name">Lady Eleanor V.</div>
+                <div class="review-buyer-location">Mayfair, London</div>
+              </div>
+              <span class="verified-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.25 17.292l-4.5-4.364 1.857-1.858 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.643z"/>
+                </svg>
+                Verified Buyer
+              </span>
+            </div>
+          </article>
+
+          <!-- Review 2 -->
+          <article class="review-card">
+            <div class="review-stars">
+              ★★★★★
+            </div>
+            <p class="review-quote">
+              "The Dubai concierge team arranged a private preview of the Patek Philippe Nautilus at my suite in the Burj Al Arab. Unbelievable professionalism, absolute discretion, and mint collector condition."
+            </p>
+            <div class="review-unboxing-tag">
+              <span>📦</span>
+              <span>Unboxing: Patek Philippe 5711/1R</span>
+            </div>
+            <div class="review-buyer-meta">
+              <div>
+                <div class="review-buyer-name">Tariq Al-Mansoor</div>
+                <div class="review-buyer-location">Downtown Dubai, UAE</div>
+              </div>
+              <span class="verified-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.25 17.292l-4.5-4.364 1.857-1.858 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.643z"/>
+                </svg>
+                Verified Buyer
+              </span>
+            </div>
+          </article>
+
+          <!-- Review 3 -->
+          <article class="review-card">
+            <div class="review-stars">
+              ★★★★★
+            </div>
+            <p class="review-quote">
+              "Finding the classic Chanel Double Flap in store-fresh caviar leather is nearly impossible at retail. SeigneurBags sourced it, inspected it, and had it in Beverly Hills before my anniversary dinner."
+            </p>
+            <div class="review-unboxing-tag">
+              <span>📦</span>
+              <span>Unboxing: Chanel Double Flap Caviar</span>
+            </div>
+            <div class="review-buyer-meta">
+              <div>
+                <div class="review-buyer-name">Camille Dupont</div>
+                <div class="review-buyer-location">Beverly Hills, California</div>
+              </div>
+              <span class="verified-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.25 17.292l-4.5-4.364 1.857-1.858 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.643z"/>
+                </svg>
+                Verified Buyer
+              </span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         EDITORIAL LOOKBOOK BANNER
+         ======================================================== -->
+    <section class="lookbook-section" id="lookbook">
+      <div class="container">
+        <div class="lookbook-banner">
+          <img class="lookbook-banner-img" 
+               src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=80" 
+               alt="SeigneurBags Lookbook Editorial">
+          <div class="lookbook-content">
+            <span class="lookbook-tag">The Autumn Edit &bull; 2026</span>
+            <h2 class="lookbook-title">The Art of Timeless Refinement</h2>
+            <p style="color: #e3e3dc; margin-bottom: 1.8rem; font-size: 0.95rem;">
+              Immerse yourself in our seasonal haute couture editorial showcasing rare exotics, vintage horology, and modern silhouette styling.
+            </p>
+            <a href="#collection" class="btn btn-primary">
+              <span>View Editorial Pieces</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       8. FOOTER
+       ======================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        
+        <!-- Brand Bio Col -->
+        <div class="footer-brand-col">
+          <a href="#" class="footer-logo">SEIGNEURBAGS</a>
+          <p class="footer-bio">
+            SeigneurBags — Curating exceptional luxury bags and fashion pieces for a discerning global clientele. Dispatched with insured white-glove security from our Dubai vault to destinations worldwide.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://wa.me/971501234567" target="_blank" rel="noopener" class="social-icon-link" aria-label="WhatsApp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon-link" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="2" x2="12" y2="22"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: The Collections -->
+        <div>
+          <h4 class="footer-col-title">The Collections</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="#collection">Hermès Birkin &amp; Kelly</a></li>
+            <li class="footer-link-item"><a href="#collection">Chanel Timeless Flap</a></li>
+            <li class="footer-link-item"><a href="#collection">Patek Philippe Horology</a></li>
+            <li class="footer-link-item"><a href="#collection">Audemars Piguet Royal Oak</a></li>
+            <li class="footer-link-item"><a href="#collection">Loro Piana Suede Loafers</a></li>
+            <li class="footer-link-item"><a href="#collection">Cartier Fine Jewelry</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links / Client Care -->
+        <div>
+          <h4 class="footer-col-title">Client Care &amp; Trust</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="#guarantees">Shipping Policy &bull; Free Global</a></li>
+            <li class="footer-link-item"><a href="#guarantees">Return &amp; Refund Terms (7-Day)</a></li>
+            <li class="footer-link-item"><a href="#guarantees">Authenticity Guarantee</a></li>
+            <li class="footer-link-item"><a href="#" onclick="showToast('Tracking portal: Enter your BGS-VAULT consignment number.'); return false;">Track Order (DHL / FedEx)</a></li>
+            <li class="footer-link-item"><a href="#concierge">FAQ &amp; Vault Consignments</a></li>
+            <li class="footer-link-item"><a href="#concierge">Private VIP Concierge</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter Box -->
+        <div>
+          <h4 class="footer-col-title">The Private Club</h4>
+          <p class="newsletter-desc">
+            Join the Seigneur Private Club for early drop notifications, private salon invites, and vault allocation access.
+          </p>
+          <form class="newsletter-form" id="footer-newsletter-form">
+            <div class="newsletter-input-group">
+              <input type="email" 
+                     id="newsletter-email" 
+                     class="newsletter-input" 
+                     placeholder="Enter your VIP email..." 
+                     required>
+              <button type="submit" class="newsletter-btn">Join</button>
+            </div>
+            <span class="newsletter-privacy">Strict confidentiality. Unsubscribe anytime.</span>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Row -->
+      <div class="footer-bottom">
+        <div class="copyright-text">
+          &copy; 2026 SeigneurBags. All Rights Reserved. Sourced &amp; Dispatched from Dubai, United Arab Emirates.
+        </div>
+
+        <!-- Verified Payment Badges -->
+        <div class="payment-badges-row">
+          <span class="payment-chip">PayPal Verified</span>
+          <span class="payment-chip">Visa 3D-Secure</span>
+          <span class="payment-chip">Mastercard ID Check</span>
+          <span class="payment-chip">Apple Pay</span>
+          <span class="payment-chip">Bank Wire Transfer</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       SHOPPING BAG SLIDE-OUT DRAWER
+       ======================================================== -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      
+      <div class="cart-header">
+        <div class="cart-header-title">
+          <span>Shopping Bag</span>
+          <span style="font-size: 0.8rem; color: var(--gold-primary); font-family: var(--font-sans);">(Complimentary Insured Courier)</span>
+        </div>
+        <button class="cart-close-btn" id="cart-close-btn" aria-label="Close Shopping Bag">&times;</button>
+      </div>
+
+      <div class="cart-shipping-notice">
+        <span>✈️</span>
+        <span>Eligible for Free Worldwide Insured Courier Dispatch from Dubai</span>
+      </div>
+
+      <div class="cart-items-container" id="cart-items-container">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-subtotal-row">
+          <span class="cart-subtotal-label">Subtotal</span>
+          <span class="cart-subtotal-value" id="cart-subtotal-value">$28,500</span>
+        </div>
+        <p class="cart-tax-notice">Taxes and duties calculated upon destination delivery. 100% insured transit.</p>
+        <button class="btn btn-gold-solid cart-checkout-btn" id="cart-checkout-btn">
+          <span>Proceed to Secure Checkout</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       QUICK VIEW PRODUCT MODAL
+       ======================================================== -->
+  <div class="modal-backdrop" id="quickview-modal">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      
+      <div class="quickview-layout">
+        <div class="quickview-gallery">
+          <img id="modal-product-img" class="quickview-main-img" src="" alt="Product Large View">
+        </div>
+
+        <div class="quickview-details">
+          <span class="quickview-designer" id="modal-product-designer">Designer</span>
+          <h2 class="quickview-title" id="modal-product-title">Product Title</h2>
+          <div class="quickview-price" id="modal-product-price">$0</div>
+
+          <p id="modal-product-desc" style="color: #c4c4be; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.2rem;">
+            Detailed description.
+          </p>
+
+          <div class="quickview-specs" id="modal-product-specs">
+            <!-- Populated via app.js -->
+          </div>
+
+          <div class="quickview-actions">
+            <button class="btn btn-gold-solid" id="modal-add-to-bag-btn">
+              <span>+ Add to Shopping Bag</span>
+            </button>
+            <a href="#" id="modal-wa-inquire-btn" target="_blank" rel="noopener" class="btn btn-whatsapp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+              <span>Inquire via Dubai WhatsApp Desk</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       LIVE SEARCH MODAL
+       ======================================================== -->
+  <div class="search-modal-backdrop" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <input type="text" 
+               id="search-input-field" 
+               class="search-input-field" 
+               placeholder="Search Birkin, Nautilus, Chanel, Daytona..." 
+               autocomplete="off">
+        <button class="search-close-icon" id="search-close-btn" aria-label="Close search">&times;</button>
+      </div>
+
+      <div class="search-results-list" id="search-results-list">
+        <p style="color: var(--text-muted); font-size: 0.9rem; grid-column: span 2;">
+          Type to search Hermès, Patek Philippe, Chanel, Rolex, Cartier...
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       VIP CONCIERGE CUSTOM SOURCING MODAL
+       ======================================================== -->
+  <div class="modal-backdrop" id="concierge-modal">
+    <div class="concierge-modal-box">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      
+      <div style="text-align: center; margin-bottom: 1rem;">
+        <span style="font-size: 0.72rem; letter-spacing: 0.25em; color: var(--gold-primary); text-transform: uppercase;">Direct Dubai Vault Desk</span>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: #fff; margin-top: 0.3rem;">Private Sourcing Request</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem;">
+          Specify the reference, leather, or horological complication you seek. We contact our private network immediately.
+        </p>
+      </div>
+
+      <form id="concierge-sourcing-form" class="concierge-form">
+        <div class="form-group">
+          <label class="form-label" for="concierge-name">Your Name / Title</label>
+          <input type="text" id="concierge-name" class="form-control" placeholder="e.g. Lady Sarah / Sheikh M." required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="concierge-brand">Designer House</label>
+          <input type="text" id="concierge-brand" class="form-control" placeholder="e.g. Hermès, Patek Philippe, Rolex" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="concierge-model">Model / Specifications / Hardware</label>
+          <input type="text" id="concierge-model" class="form-control" placeholder="e.g. Kelly 28 Sellier Epsom GHW or Nautilus 5711" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="concierge-budget">Target Budget &amp; Timeline</label>
+          <input type="text" id="concierge-budget" class="form-control" placeholder="e.g. $30,000 - $45,000 USD / Immediate">
+        </div>
+
+        <button type="submit" class="btn btn-gold-solid" style="margin-top: 1rem;">
+          <span>Submit Request to Dubai WhatsApp Desk</span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       CHECKOUT SIMULATION MODAL
+       ======================================================== -->
+  <div class="modal-backdrop" id="checkout-modal">
+    <div class="concierge-modal-box" style="max-width: 500px; text-align: center;">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      
+      <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--gold-subtle); border: 1px solid var(--gold-border); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; color: var(--gold-light); font-size: 1.5rem;">
+        🔒
+      </div>
+
+      <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #fff; margin-bottom: 0.6rem;">VIP Secure Checkout</h3>
+      <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+        Your selection total is <strong id="checkout-summary-total" style="color: var(--gold-light); font-family: var(--font-mono);">$0</strong>. For items of this caliber, SeigneurBags provides private banker wire escrow or verified 256-bit encrypted checkout links.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+        <a id="checkout-wa-btn" href="#" target="_blank" rel="noopener" class="btn btn-whatsapp" style="width: 100%;">
+          <span>Finalize via WhatsApp Concierge</span>
+        </a>
+        <button class="btn btn-secondary" onclick="showToast('Invoice dispatched to client email with Dubai IBAN wire instructions.'); document.getElementById('checkout-modal').classList.remove('open');">
+          <span>Request Private Bank Wire Invoice</span>
+        </button>
+      </div>
+
+      <div style="margin-top: 1.5rem; font-size: 0.72rem; color: var(--text-muted);">
+        Verified by Lloyd’s of London Insured Transit &bull; Dubai DIFC Vault Escrow
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>

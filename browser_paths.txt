@@ -1,0 +1,7 @@
+Searching browser locations... 
+NOT FOUND: "C:\Program Files\Google\Chrome\Application\chrome.exe" 
+FOUND: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" 
+NOT FOUND: "C:\Users\fayyaz\AppData\Local\Google\Chrome\Application\chrome.exe" 
+NOT FOUND: "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" 
+NOT FOUND: "C:\Program Files\Microsoft\Edge\Application\msedge.exe" 
+FOUND: "C:\Windows\explorer.exe" 
